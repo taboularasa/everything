@@ -3,21 +3,21 @@ development:
   database: everything_dev
   pool: 5
   timeout: 5000
-  username: vagrant
-  password: vagrant
+  username: gameadmin
+  password: gameadmin
 
 test:
   adapter: postgresql
   database: everything_test
   pool: 5
   timeout: 5000
-  username: vagrant
-  password: vagrant
+  username: gameadmin
+  password: gameadmin
 
 production:
   adapter: postgresql
   database: everything_production
   pool: 5
   timeout: 5000
-  username: vagrant
-  password: vagrant
+  username: gameadmin
+  password: gameadmin
