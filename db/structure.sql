@@ -50,11 +50,11 @@ CREATE TABLE products (
     id integer NOT NULL,
     name character varying(255),
     category character varying(255),
-    price numeric(8,2),
     description text,
     properties hstore,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    barcode numeric
 );
 
 
@@ -124,3 +124,7 @@ INSERT INTO schema_migrations (version) VALUES ('20130130235920');
 INSERT INTO schema_migrations (version) VALUES ('20130131000518');
 
 INSERT INTO schema_migrations (version) VALUES ('20130131001634');
+
+INSERT INTO schema_migrations (version) VALUES ('20130206230458');
+
+INSERT INTO schema_migrations (version) VALUES ('20130206231612');
