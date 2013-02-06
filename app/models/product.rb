@@ -1,11 +1,20 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  category    :string(255)
+#  price       :decimal(8, 2)
+#  description :text
+#  properties  :hstore
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Product < ActiveRecord::Base
   attr_accessible :category, :description, :name, :price, :author
+  serialize :properties, ActiveRecord::Coders::Hstore
 
-  def author
-    properties && properties["author"]
-  end
-
-  def author=(value)
-    self.properties = (properties || {}).merge("author" => value)
-  end
+  hstore_accessor :properties, :author
 end
