@@ -15,6 +15,12 @@
   <%= @product.price %>
 </p>
 
+<% if @product.author.present? %>
+  <p>
+  <b>Author:</b>
+  <%= @product.author %>
+  </p>
+<% end %>
 <p>
   <b>Description:</b>
   <%= @product.description %>
