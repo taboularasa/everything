@@ -4,8 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Category</th>
-    <th>Price</th>
     <th>Description</th>
+    <th>Author</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,8 +15,12 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= product.category %></td>
-    <td><%= product.price %></td>
     <td><%= product.description %></td>
+    <% if product.author.present? %> 
+      <td><%= product.author %></td> 
+    <% elsif %>
+      <td>N/A</td>
+    <% end %>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
