@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: products
+# Table name: items
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
@@ -12,10 +12,8 @@
 #  barcode     :decimal(, )
 #
 
-require 'test_helper'
-
-class ProductTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Item < ActiveRecord::Base
+  attr_accessible :category, :description, :name, :barcode, :author
+  serialize :properties, ActiveRecord::Coders::Hstore
+  hstore_accessor :properties, :author
 end

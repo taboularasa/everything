@@ -43,10 +43,10 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE TABLE products (
+CREATE TABLE items (
     id integer NOT NULL,
     name character varying(255),
     category character varying(255),
@@ -59,10 +59,10 @@ CREATE TABLE products (
 
 
 --
--- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: items_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE products_id_seq
+CREATE SEQUENCE items_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -71,10 +71,10 @@ CREATE SEQUENCE products_id_seq
 
 
 --
--- Name: products_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE products_id_seq OWNED BY products.id;
+ALTER SEQUENCE items_id_seq OWNED BY items.id;
 
 
 --
@@ -90,14 +90,14 @@ CREATE TABLE schema_migrations (
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY products ALTER COLUMN id SET DEFAULT nextval('products_id_seq'::regclass);
+ALTER TABLE ONLY items ALTER COLUMN id SET DEFAULT nextval('items_id_seq'::regclass);
 
 
 --
 -- Name: products_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY products
+ALTER TABLE ONLY items
     ADD CONSTRAINT products_pkey PRIMARY KEY (id);
 
 
@@ -105,7 +105,7 @@ ALTER TABLE ONLY products
 -- Name: products_properties; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE INDEX products_properties ON products USING gin (properties);
+CREATE INDEX products_properties ON items USING gin (properties);
 
 
 --
@@ -128,3 +128,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130131001634');
 INSERT INTO schema_migrations (version) VALUES ('20130206230458');
 
 INSERT INTO schema_migrations (version) VALUES ('20130206231612');
+
+INSERT INTO schema_migrations (version) VALUES ('20130207224121');

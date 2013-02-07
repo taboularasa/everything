@@ -12,8 +12,10 @@
 #  barcode     :decimal(, )
 #
 
-class Product < ActiveRecord::Base
-  attr_accessible :category, :description, :name, :barcode, :author
-  serialize :properties, ActiveRecord::Coders::Hstore
-  hstore_accessor :properties, :author
+require 'test_helper'
+
+class ItemTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
