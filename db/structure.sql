@@ -54,7 +54,8 @@ CREATE TABLE items (
     properties hstore,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    barcode numeric
+    barcode numeric,
+    type character varying(255)
 );
 
 
@@ -130,3 +131,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130206230458');
 INSERT INTO schema_migrations (version) VALUES ('20130206231612');
 
 INSERT INTO schema_migrations (version) VALUES ('20130207224121');
+
+INSERT INTO schema_migrations (version) VALUES ('20130207235044');

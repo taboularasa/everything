@@ -10,10 +10,10 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  barcode     :decimal(, )
+#  type        :string(255)
 #
 
 class Item < ActiveRecord::Base
-  attr_accessible :category, :description, :name, :barcode, :author
+  attr_accessible :category, :description, :name, :barcode
   serialize :properties, ActiveRecord::Coders::Hstore
-  hstore_accessor :properties, :author
 end
