@@ -2,18 +2,18 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Author</th>
   </tr>
 
 <% @books.each do |book| %>
   <tr>
-    <td><%= item.name %></td>
-    <td><%= item.category %></td>
-    <td><%= item.description %></td>
-    <% if item.author.present? %> 
-      <td><%= item.author %></td> 
+    <td><%= book.name %></td>
+    <td><%= book.category %></td>
+    <td><%= book.description %></td>
+    <% if book.author.present? %> 
+      <td><%= book.author %></td> 
     <% elsif %>
       <td>N/A</td>
     <% end %>
