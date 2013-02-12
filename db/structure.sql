@@ -48,7 +48,7 @@ SET default_with_oids = false;
 
 CREATE TABLE items (
     id integer NOT NULL,
-    name character varying(255),
+    title character varying(255),
     category character varying(255),
     description text,
     properties hstore,
@@ -133,3 +133,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130206231612');
 INSERT INTO schema_migrations (version) VALUES ('20130207224121');
 
 INSERT INTO schema_migrations (version) VALUES ('20130207235044');
+
+INSERT INTO schema_migrations (version) VALUES ('20130212010236');

@@ -3,7 +3,7 @@
 # Table name: items
 #
 #  id          :integer          not null, primary key
-#  name        :string(255)
+#  title       :string(255)
 #  category    :string(255)
 #  description :text
 #  properties  :hstore
