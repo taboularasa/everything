@@ -12,6 +12,7 @@
 #  barcode      :integer
 #  type         :string(255)
 #  container_id :integer
+#  in_use       :boolean
 #
 
 require 'spec_helper'

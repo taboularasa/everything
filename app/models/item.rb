@@ -12,6 +12,7 @@
 #  barcode      :integer
 #  type         :string(255)
 #  container_id :integer
+#  in_use       :boolean
 #
 
 class Item < ActiveRecord::Base
