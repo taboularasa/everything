@@ -1,0 +1,7 @@
+- add users resrouce
+- add container resource
+- test closure_tree gem on container 
+- setup relationships between users items and containers
+- build csv importer
+- make factory for testing resources
+- build views
