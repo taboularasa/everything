@@ -1,4 +1,10 @@
 Everything::Application.routes.draw do
+  resources :containers
+
+
+  resources :users
+
+
   resources :peripherals
 
 

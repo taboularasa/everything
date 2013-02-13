@@ -8,11 +8,11 @@ gem 'rails', '3.2.11'
 gem 'pg'
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'annotate'
-  gem 'guard-livereload'
-  gem 'rack-livereload'
+  gem 'better_errors', '0.3.2'
+  gem 'binding_of_caller', '0.6.8'
+  gem 'annotate', '2.5.0'
+  gem 'guard-livereload', '1.1.3'
+  gem 'rack-livereload', '0.3.11'
 end
 
 group :development, :test do
@@ -38,4 +38,6 @@ end
 gem 'jquery-rails'
 
 gem 'activerecord-postgres-hstore'
+
+gem 'closure_tree', '3.7.2'
 

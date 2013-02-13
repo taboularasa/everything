@@ -43,6 +43,51 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: container_hierarchies; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE container_hierarchies (
+    ancestor_id integer NOT NULL,
+    descendant_id integer NOT NULL,
+    generations integer NOT NULL
+);
+
+
+--
+-- Name: containers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE containers (
+    id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    parent_id integer,
+    name character varying(255),
+    description text,
+    barcode integer
+);
+
+
+--
+-- Name: containers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE containers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: containers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE containers_id_seq OWNED BY containers.id;
+
+
+--
 -- Name: items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -90,10 +135,62 @@ CREATE TABLE schema_migrations (
 
 
 --
+-- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY containers ALTER COLUMN id SET DEFAULT nextval('containers_id_seq'::regclass);
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY items ALTER COLUMN id SET DEFAULT nextval('items_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: containers_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY containers
+    ADD CONSTRAINT containers_pkey PRIMARY KEY (id);
 
 
 --
@@ -102,6 +199,28 @@ ALTER TABLE ONLY items ALTER COLUMN id SET DEFAULT nextval('items_id_seq'::regcl
 
 ALTER TABLE ONLY items
     ADD CONSTRAINT products_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_container_hierarchies_on_ancestor_id_and_descendant_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_container_hierarchies_on_ancestor_id_and_descendant_id ON container_hierarchies USING btree (ancestor_id, descendant_id);
+
+
+--
+-- Name: index_container_hierarchies_on_descendant_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_container_hierarchies_on_descendant_id ON container_hierarchies USING btree (descendant_id);
 
 
 --
@@ -143,3 +262,13 @@ INSERT INTO schema_migrations (version) VALUES ('20130212182913');
 INSERT INTO schema_migrations (version) VALUES ('20130212184053');
 
 INSERT INTO schema_migrations (version) VALUES ('20130213001134');
+
+INSERT INTO schema_migrations (version) VALUES ('20130213190201');
+
+INSERT INTO schema_migrations (version) VALUES ('20130213194410');
+
+INSERT INTO schema_migrations (version) VALUES ('20130213194924');
+
+INSERT INTO schema_migrations (version) VALUES ('20130213195210');
+
+INSERT INTO schema_migrations (version) VALUES ('20130213200306');

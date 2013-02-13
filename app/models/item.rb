@@ -16,6 +16,7 @@
 #
 
 class Item < ActiveRecord::Base
+  belongs_to :container
   attr_accessible :title, :category, :description, :barcode, :container_id, :properties
   serialize :properties, ActiveRecord::Coders::Hstore
   validates :title, presence: true
