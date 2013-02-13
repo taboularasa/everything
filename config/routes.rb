@@ -1,4 +1,28 @@
 Everything::Application.routes.draw do
+  resources :peripherals
+
+
+  resources :softwares
+
+
+  resources :computers
+
+
+  resources :power_supplies
+
+
+  resources :consumables
+
+
+  resources :tools
+
+
+  resources :cables
+
+
+  resources :games
+
+
   resources :items
   resources :books
 

@@ -14,10 +14,8 @@
 #  container_id :integer
 #
 
-class Item < ActiveRecord::Base
-  attr_accessible :title, :category, :description, :barcode, :container_id, :properties
-  serialize :properties, ActiveRecord::Coders::Hstore
-  validates :title, presence: true
-  validates :barcode, presence: true, uniqueness: true, numericality: true
-  validates :container_id, presence: true, numericality: true
+require 'spec_helper'
+
+describe Game do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

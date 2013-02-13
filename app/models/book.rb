@@ -15,13 +15,14 @@
 #
 
 class Book < Item
-  #attr_accessible :barcode, :title
-  serialize :properties, ActiveRecord::Coders::Hstore
   %w[author publisher isbn amazon pages].each do |key|
     attr_accessible key
     hstore_accessor :properties, key
   end
-  #hstore_accessor :properties, :author, :amazon, :isbn, :publisher, :pages
-  validates :author, presence: true
 
+  validates :author, presence: true
+  validates :publisher, presence: true
+  validates :isbn, presence: true, numericality: true
+  validates :amazon, numericality: true
+  validates :pages, presence: true, numericality: true
 end

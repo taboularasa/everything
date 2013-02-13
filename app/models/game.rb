@@ -14,10 +14,14 @@
 #  container_id :integer
 #
 
-class Item < ActiveRecord::Base
-  attr_accessible :title, :category, :description, :barcode, :container_id, :properties
-  serialize :properties, ActiveRecord::Coders::Hstore
-  validates :title, presence: true
-  validates :barcode, presence: true, uniqueness: true, numericality: true
-  validates :container_id, presence: true, numericality: true
+class Game < Item
+  %w[booklet_id amazon isbn publisher platform].each do |key|
+    attr_accessible key
+    hstore_accessor :properties, key
+  end
+
+  validates :publisher, presence: true
+  validates :platform, presence: true
+  validates :amazon, numericality: true
+  validates :isbn, numericality: true
 end

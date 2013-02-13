@@ -17,7 +17,12 @@
 require 'spec_helper'
 
 describe Book do
-  before { @book = Book.new(id: 12, container_id: 2, title: "Awesome Book", amazon: 75477883, isbn: 76377885, publisher: "apress", pages: 434, author: "Dan Dolittle") }
+  before { @book = Book.new(title: "my book", barcode: 234234, container_id: 2, properties: { 
+                                                                                          "author" => "Dan", 
+                                                                                          "publisher" => "rad", 
+                                                                                          "isbn" => 1234, 
+                                                                                          "amazon" => 34523423, 
+                                                                                          "pages" => 123}) }
   subject { @book }
 
   it { should respond_to(:id) }

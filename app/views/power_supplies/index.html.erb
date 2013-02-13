@@ -1,0 +1,21 @@
+<h1>Listing power_supplies</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @power_supplies.each do |power_supply| %>
+  <tr>
+    <td><%= link_to 'Show', power_supply %></td>
+    <td><%= link_to 'Edit', edit_power_supply_path(power_supply) %></td>
+    <td><%= link_to 'Destroy', power_supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Power supply', new_power_supply_path %>
