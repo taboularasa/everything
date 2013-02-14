@@ -18,12 +18,7 @@
 require 'spec_helper'
 
 describe Book do
-  before { @book = Book.new(title: "my book", barcode: 234234, container_id: 2, properties: { 
-                                                                                          "author" => "Dan", 
-                                                                                          "publisher" => "rad", 
-                                                                                          "isbn" => 1234, 
-                                                                                          "amazon" => 34523423, 
-                                                                                          "pages" => 123}) }
+  before { FactoryGirl.create(:book) }
   subject { @book }
 
   it { should respond_to(:id) }

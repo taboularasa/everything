@@ -1,4 +1,4 @@
-- setup relationships between users items and containers
+- check that trait for item works in factory
+- finish factories for other item types
 - build csv importer
-- make factory for testing resources
-- build views
+- learn how to test json api

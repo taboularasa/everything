@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'pg'
 
 group :development do
+  gem 'pry-rails', '0.2.1'
   gem 'better_errors', '0.3.2'
   gem 'binding_of_caller', '0.6.8'
   gem 'annotate', '2.5.0'
@@ -21,6 +22,9 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'spork', '0.9.2'
   gem 'childprocess', '0.3.6'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker', '1.0.1'
+  gem 'faker-isbn', '~> 0.0.1'
 end
 
 group :test do
@@ -41,3 +45,4 @@ gem 'activerecord-postgres-hstore'
 
 gem 'closure_tree', '3.7.2'
 
+gem 'bookland', '~> 2.0.0'
