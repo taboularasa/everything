@@ -3,20 +3,20 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Description</th>
     <th>Author</th>
+    <th>ISBN</th>
+    <th>Amazon</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @books.each do |book| %>
   <tr>
-    <td><%= book.name %></td>
-    <td><%= book.category %></td>
-    <td><%= book.description %></td>
-    <% if book.author.present? %> 
-      <td><%= book.author %></td> 
-    <% elsif %>
-      <td>N/A</td>
-    <% end %>
+    <td><%= book.title %></td>
+    <td><%= book.author %></td>
+    <td><%= book.isbn %></td>
+    <td><%= book.amazon %></td>
     <td><%= link_to 'Show', book %></td>
     <td><%= link_to 'Edit', edit_book_path(book) %></td>
     <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>

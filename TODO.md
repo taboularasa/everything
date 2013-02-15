@@ -1,3 +1,4 @@
-- learn how to test json api
+- build an index page with bootstrap theme
 - build csv importer
 - start building out user system
+- learn how to test json api

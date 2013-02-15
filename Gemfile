@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'jquery-rails', '2.1.4'
+gem 'haml-rails', '0.4'
+gem 'activerecord-postgres-hstore', '0.7.3'
+gem 'closure_tree', '3.7.2'
+gem 'bookland', '~> 2.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'pg', '0.14.1'
 
 group :development do
   gem 'pry-rails', '0.2.1'
@@ -24,7 +29,6 @@ group :development, :test do
   gem 'childprocess', '0.3.6'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker', '1.0.1'
-  gem 'faker-isbn', '~> 0.0.1'
 end
 
 group :test do
@@ -35,14 +39,11 @@ end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass', '2.0.0'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails', '1.0.3'
+  gem 'zurb-foundation', '3.2.5'
+  gem 'foundation-icons-sass-rails', '2.0.0'
 end
 
-gem 'jquery-rails'
-
-gem 'activerecord-postgres-hstore'
-
-gem 'closure_tree', '3.7.2'
-
-gem 'bookland', '~> 2.0.0'
