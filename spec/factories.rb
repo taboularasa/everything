@@ -1,26 +1,75 @@
 FactoryGirl.define do
-  trait :item do
-    sequence(:title) { Faker::Name.title }
+  trait :base do
+    sequence(:title) { |n| "title#{n}"}
     sequence(:barcode) { |n| "#{n}" }
     sequence(:container_id) { 1 }
   end
 
-  factory :book do
-    sequence(:author) { Faker::Name.first_name }
-    sequence(:publisher) { Faker::Company.name }
+  factory :item, traits: [:base]
+
+  factory :book  do
+    base
+    sequence(:author) { |n| "author#{n}" }
+    sequence(:publisher) { |n| "publisher#{n}" }
     sequence(:isbn) { |n| n.to_s.rjust(13,'0') }
     sequence(:amazon) { |n| n.to_s.rjust(13,'0') }
-    sequence(:pages) { 123 } #random number
+    pages 123
+  end
+
+  factory :cable do
+    base
+    connector_type "foo"
+    length 12
+    color "blue"
+  end
+
+  factory :computer do
+    base
+    cpu "i7"
+    gpu "gtx"
+    ram 8
+  end
+
+  factory :consumable do
+    base
+  end
+
+  factory :game do
+    base
+    sequence(:publisher) { |n| "publisher#{n}" }
+    platform "xbox"
+  end
+
+  factory :peripheral do
+    base
+    computer_id 4
+    model "vaspula"
+    manufacturer "razer"
+  end
+
+  factory :power_supply do
+    base
+    input 120
+    output 5
+    amp_rating 500
+    input_connector "c7"
+    output_connector "barrel jack"
+  end
+
+  factory :software do
+    base
+    version 10
+    publisher "microsoft"
+  end
+
+  factory :tool do
+    base
+    type "screwdriver"
   end
 
   factory :container do
-    sequence(:name) { Faker::Company.name }
-  end
-
-  factory :container_with_item, :parent => :container do
-    after_create do |container|
-      FactoryGirl.create(:item, :container => container)
-    end
+    sequence(:name) { |n| "container#{n}" }
+    sequence(:barcode) { |n| "#{n}" }
   end
 
 end

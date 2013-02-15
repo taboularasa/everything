@@ -23,6 +23,6 @@ class Game < Item
 
   validates :publisher, presence: true
   validates :platform, presence: true
-  validates :amazon, numericality: true
-  validates :isbn, numericality: true
+  validates :amazon, numericality: true, allow_nil: true
+  validates :isbn, numericality: true, allow_nil: true
 end

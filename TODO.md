@@ -1,4 +1,3 @@
-- check that trait for item works in factory
-- finish factories for other item types
-- build csv importer
 - learn how to test json api
+- build csv importer
+- start building out user system

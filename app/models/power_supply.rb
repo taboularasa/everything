@@ -21,9 +21,9 @@ class PowerSupply < Item
     hstore_accessor :properties, key
   end
 
-  validates :input, presence: true
-  validates :output, presence: true
-  validates :amp_rating, presence: true
+  validates :input, presence: true, numericality: true
+  validates :output, presence: true, numericality: true
+  validates :amp_rating, presence: true, numericality: true
   validates :input_connector, presence: true
   validates :output_connector, presence: true
 end

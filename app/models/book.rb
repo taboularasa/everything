@@ -24,6 +24,6 @@ class Book < Item
   validates :author, presence: true
   validates :publisher, presence: true
   validates :isbn, presence: true, numericality: true
-  validates :amazon, numericality: true
+  validates :amazon, numericality: true, allow_nil: true
   validates :pages, presence: true, numericality: true
 end
