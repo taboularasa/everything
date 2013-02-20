@@ -1,14 +1,17 @@
 class ItemsController < ApplicationController
   def index
     @items = ad_type.all
+    render "#{ad_type.to_s.downcase.pluralize}/index"
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = ad_type.find(params[:id])
+    render "#{@item.type.downcase.pluralize}/show"
   end
 
   def new
-    ad_type.new
+    @item = ad_type.new
+    render "#{@item.type.downcase.pluralize}/new"
   end
 
   def edit
@@ -17,12 +20,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = ad_type.new(params[:item])
-
+    @item = ad_type.new(params[params[:type].downcase])
     if @item.save
       redirect_to @item, notice: 'item was successfully created.'
     else
-      render action: "new"
+      #render action: "new"
+      render "#{@item.type.downcase.pluralize}/new"
     end
   end
 
