@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
+    render "#{@item.type.downcase.pluralize}/edit"
   end
 
   # POST /items
