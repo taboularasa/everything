@@ -1,0 +1,8 @@
+div.six.columns.centered
+  p#notice= notice
+  p This is book/show.html.slim
+  p=@item.title
+
+  div.row
+    div.one.columns= link_to 'Edit', edit_book_path(@item)
+    div.one.columns.end= link_to 'Back', books_path
