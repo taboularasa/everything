@@ -1,8 +1,8 @@
 Everything::Application.routes.draw do
+  resources :containers
+  resources :users
   resources :items, type: "Item"
 
-  resources :containers, controller: "items", type: "Container"
-  resources :users, controller: "items", type: "User"
   resources :peripherals, controller: "items", type: "Peripheral"
   resources :softwares, controller: "items", type: "Software"
   resources :computers, controller: "items", type: "Computer"

@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    render "#{@item.type.downcase.pluralize}/edit"
+    #render "#{@item.type.downcase.pluralize}/edit"
   end
 
   def create
