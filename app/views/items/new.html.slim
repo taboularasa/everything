@@ -3,4 +3,4 @@ div.six.columns.centered
   = render 'form'
   
   div.row
-    div.five.columns= link_to "Show all #{@item.type.pluralize}", item_controller(@item).to_sym
+    div.five.columns= link_to "Show all #{@item.type.pluralize}", type_sym(@item)

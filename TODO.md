@@ -1,4 +1,4 @@
-- finishing writing item subtype partials
+- finishing writing item subtype partials for tables and forms
 - migrate fields for dates (i.e. due date)
 - refactor field from hstore to base model where possible
 - update forms to use type specific fields where possible
