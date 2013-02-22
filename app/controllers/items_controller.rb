@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
     @items = ad_type.all
-    render "#{ad_type.to_s.downcase.pluralize}/index"
   end
 
   def show
@@ -11,12 +10,10 @@ class ItemsController < ApplicationController
 
   def new
     @item = ad_type.new
-    render "#{@item.type.downcase.pluralize}/new"
   end
 
   def edit
     @item = Item.find(params[:id])
-    #render "#{@item.type.downcase.pluralize}/edit"
   end
 
   def create

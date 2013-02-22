@@ -1,18 +1,3 @@
-h3 Listing Items
+h3 Listing #{@items[0].type.pluralize}
 
-table
-  tr
-    th Title
-    th Barcode
-    th Container ID
-    th
-    th
-    th
-  - @items.each do |item|
-    tr
-      td= item.title
-      td= item.barcode
-      td= item.container_id
-      td= link_to 'Show', item
-      td= link_to 'Edit', edit_item_path(item)
-      td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
+= render "#{item_controller(@items[0])}/table"

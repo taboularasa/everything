@@ -1,5 +1,3 @@
-h3 Listing Books
-
 table
   tr
     th Title
@@ -19,7 +17,5 @@ table
       td= link_to 'Edit', edit_book_path(book)
       td= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
 
-
 br
 = link_to 'New Book', [:new, :book]
-
