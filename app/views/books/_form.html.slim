@@ -1,25 +1,7 @@
 = form_for(@item) do |f|
-  - if @item.errors.any?
-    div#error_explanation
-      h2= "#{pluralize(@item.errors.count, "error")} prohibited this book from being saved:"
-
-      ul
-      - @item.errors.full_messages.each do |msg|
-        li= msg
-
+  =render 'shared/form_error'
   div.actions
-
-    div.field
-      = f.label :title
-      = f.text_field :title
-
-    div.field
-      = f.label :barcode
-      = f.text_field :barcode
-
-    div.field
-      = f.label :container_id
-      = f.text_field :container_id
+    = render partial: 'shared/base_form_fields', locals: {f: f}
 
     div.field
       = f.label :author

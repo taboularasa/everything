@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
 
-    if @item.update_attributes(params[:item])
+    if @item.update_attributes(params[params[:type].downcase])
       redirect_to @item, notice: 'item was successfully updated.'
     else
       render action: "edit"
