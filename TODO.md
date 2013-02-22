@@ -1,4 +1,13 @@
-- build an index page with bootstrap theme
+- finishing writing item subtype partials
+- migrate fields for dates (i.e. due date)
+- refactor field from hstore to base model where possible
+- update forms to use type specific fields where possible
+- write views for containers
 - build csv importer
-- start building out user system
-- learn how to test json api
+- integrate closure tree into item creation
+- write tests for models and relationships
+- write tests for item creation
+- write tests for navigation
+- add authentication
+- add authorization
+- write tests for users

@@ -1,6 +1,6 @@
 div.six.columns.centered
   h3 Editing #{@item.type}
-  = render "#{item_controller(@item)}/form"
+  = render 'form'
 
   div.row
     div.five.columns= link_to "Show this #{@item.type}", @item

@@ -1,6 +1,6 @@
 div.six.columns.centered
   h3 New #{@item.type}
-  = render "#{item_controller(@item)}/form"
+  = render 'form'
   
   div.row
     div.five.columns= link_to "Show all #{@item.type.pluralize}", item_controller(@item).to_sym

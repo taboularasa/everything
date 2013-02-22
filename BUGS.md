@@ -1,0 +1,1 @@
+- figure out a way to render a collectio of mixed types

@@ -1,19 +1,19 @@
 table
   tr
     = render 'shared/base_table_headers'
-    th Author
-    th ISBN
-    th Amazon
+    th Connector Type
+    th Length
+    th Color
     th
     th
     th
   - @items.each do |item|
     tr
       = render 'shared/base_table_data'
-      td= item.author
-      td= item.isbn
-      td= item.amazon
+      td= item.connector_type
+      td= item.length
+      td= item.color
       = render 'shared/form_edit_links'
 
 br
-= link_to 'New Book', [:new, :book]
+= link_to 'New Cable', [:new, :book]  
