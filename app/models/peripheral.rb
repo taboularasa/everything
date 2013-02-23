@@ -20,7 +20,7 @@ class Peripheral < Item
     attr_accessible key
     hstore_accessor :properties, key
   end
-  validates :computer_id, numericality: true
+  validates :computer_id, numericality: true, allow_nil: true
   validates :model, presence: true
   validates :manufacturer, presence: true
 end

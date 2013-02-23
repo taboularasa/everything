@@ -1,3 +1,4 @@
+- add value_or_na to all non-required fields
 - finishing writing item subtype partials for tables and forms
 - migrate fields for dates (i.e. due date)
 - refactor field from hstore to base model where possible

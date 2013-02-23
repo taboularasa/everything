@@ -1,3 +1,5 @@
 td= item.author
+td= item.publisher
 td= item.isbn
-td= item.amazon
+td= value_or_na(item.amazon)
+td= item.pages
