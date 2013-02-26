@@ -2,7 +2,6 @@ FactoryGirl.define do
   trait :base do
     sequence(:title) { |n| "title#{n}"}
     sequence(:barcode) { |n| "#{n}" }
-    sequence(:container_id) { 1 }
   end
 
   factory :item, traits: [:base]
@@ -70,6 +69,10 @@ FactoryGirl.define do
   factory :container do
     sequence(:name) { |n| "container#{n}" }
     sequence(:barcode) { |n| "#{n}" }
+  end
+
+  factory :user do
+    sequence(:name) { |n| "user#{n}" }
   end
 
 end

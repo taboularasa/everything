@@ -2,21 +2,23 @@
 #
 # Table name: items
 #
-#  id           :integer          not null, primary key
-#  title        :string(255)
-#  category     :string(255)
-#  description  :text
-#  properties   :hstore
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  barcode      :integer
-#  type         :string(255)
-#  container_id :integer
-#  in_use       :boolean
+#  id             :integer          not null, primary key
+#  title          :string(255)
+#  category       :string(255)
+#  description    :text
+#  properties     :hstore
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  barcode        :integer
+#  type           :string(255)
+#  in_use         :boolean
+#  due_date       :datetime
+#  possessor_id   :integer
+#  possessor_type :string(255)
 #
 
 class Cable < Item
-  %w[connector_type length color last_working checked_out_id due_date].each do |key|
+  %w[connector_type length color last_working].each do |key|
     attr_accessible key
     hstore_accessor :properties, key
   end

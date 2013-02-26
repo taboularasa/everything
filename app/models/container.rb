@@ -13,7 +13,7 @@
 
 class Container < ActiveRecord::Base
   acts_as_tree
-  has_many :items
+  has_many :items, :as => :possessor
   attr_accessible :name
   validates :name, :presence => true, :uniqueness => { :case_sensitive => false }
   validates :barcode, presence: true, numericality: true, uniqueness: true

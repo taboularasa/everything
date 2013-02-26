@@ -101,8 +101,10 @@ CREATE TABLE items (
     updated_at timestamp without time zone NOT NULL,
     barcode integer,
     type character varying(255),
-    container_id integer,
-    in_use boolean
+    in_use boolean,
+    due_date timestamp without time zone,
+    possessor_id integer,
+    possessor_type character varying(255)
 );
 
 
@@ -141,7 +143,8 @@ CREATE TABLE schema_migrations (
 CREATE TABLE users (
     id integer NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    name character varying(255)
 );
 
 
@@ -272,3 +275,11 @@ INSERT INTO schema_migrations (version) VALUES ('20130213194924');
 INSERT INTO schema_migrations (version) VALUES ('20130213195210');
 
 INSERT INTO schema_migrations (version) VALUES ('20130213200306');
+
+INSERT INTO schema_migrations (version) VALUES ('20130225212547');
+
+INSERT INTO schema_migrations (version) VALUES ('20130225232203');
+
+INSERT INTO schema_migrations (version) VALUES ('20130225234620');
+
+INSERT INTO schema_migrations (version) VALUES ('20130226001140');

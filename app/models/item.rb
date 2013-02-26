@@ -2,24 +2,26 @@
 #
 # Table name: items
 #
-#  id           :integer          not null, primary key
-#  title        :string(255)
-#  category     :string(255)
-#  description  :text
-#  properties   :hstore
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  barcode      :integer
-#  type         :string(255)
-#  container_id :integer
-#  in_use       :boolean
+#  id             :integer          not null, primary key
+#  title          :string(255)
+#  category       :string(255)
+#  description    :text
+#  properties     :hstore
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  barcode        :integer
+#  type           :string(255)
+#  in_use         :boolean
+#  due_date       :datetime
+#  possessor_id   :integer
+#  possessor_type :string(255)
 #
 
 class Item < ActiveRecord::Base
-  belongs_to :container
-  attr_accessible :title, :category, :description, :barcode, :container_id, :properties, :type
+  belongs_to :possessor, :polymorphic => true
+  attr_accessible :title, :category, :description, :barcode, :properties, :type
   serialize :properties, ActiveRecord::Coders::Hstore
   validates :title, presence: true
   validates :barcode, presence: true, uniqueness: true, numericality: true
-  validates :container_id, presence: true, numericality: true
+
 end

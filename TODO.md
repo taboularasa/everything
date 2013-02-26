@@ -1,8 +1,6 @@
-- add value_or_na to all non-required fields
-- finishing writing item subtype partials for tables and forms
-- migrate fields for dates (i.e. due date)
-- refactor field from hstore to base model where possible
-- update forms to use type specific fields where possible
+- polymorphic association between items and user/container not working
+  because of STI in items? continue to investigate
+- make user and container two seperate associations otherwise
 - write views for containers
 - build csv importer
 - integrate closure tree into item creation
