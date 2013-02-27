@@ -8,5 +8,5 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :items, :as => :possessor
+  has_many :items, :as => :possessor #, :autosave => true
 end

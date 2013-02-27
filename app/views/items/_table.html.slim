@@ -2,17 +2,18 @@ table
   tr
     th Title
     th Type
-    th Container
+    th Possessor
     th Barcode
     /this should be conditional on if collection is of mixed type
     = render "#{type_plural(@items[0])}/table_headers"
     th
     th
     th
-  - @items.each do |item|
+  - @items.each_with_index do |item,index|
     tr
       td= item.title
-      td= item.container_id
+      td= item.type
+      td= item.possessor_id
       td= item.barcode
       = render partial: "#{type_plural(item)}/table_data", locals: {item: item}
       td= link_to 'Show', item

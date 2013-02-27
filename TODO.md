@@ -1,6 +1,3 @@
-- polymorphic association between items and user/container not working
-  because of STI in items? continue to investigate
-- make user and container two seperate associations otherwise
 - write views for containers
 - build csv importer
 - integrate closure tree into item creation
