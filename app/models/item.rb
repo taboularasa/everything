@@ -18,8 +18,8 @@
 #
 
 class Item < ActiveRecord::Base
-  belongs_to :possessor, :polymorphic => true #, :autosave => true
-  attr_accessible :title, :category, :description, :barcode, :properties, :type
+  belongs_to :possessor, :polymorphic => true
+  attr_accessible :title, :category, :description, :barcode, :properties, :type, :possessor
   serialize :properties, ActiveRecord::Coders::Hstore
   validates :title, presence: true
   validates :barcode, presence: true, uniqueness: true, numericality: true
