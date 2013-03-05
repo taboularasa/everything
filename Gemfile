@@ -7,6 +7,7 @@ gem 'slim', '1.3.6'
 gem 'activerecord-postgres-hstore', '0.7.3'
 gem 'closure_tree', '3.7.2'
 gem 'bookland', '~> 2.0.0'
+gem 'isbn_validation', '1.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

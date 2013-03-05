@@ -23,9 +23,9 @@ class Book < Item
     hstore_accessor :properties, key
   end
 
-  validates :author, presence: true
+  #validates :author, presence: true
   validates :publisher, presence: true
-  validates :isbn, presence: true, numericality: true
-  validates :amazon, numericality: true, allow_nil: true
+  validates :isbn, presence: true
+  #validates :amazon, numericality: true, allow_nil: true
   validates :pages, presence: true, numericality: true
 end
