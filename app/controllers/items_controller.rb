@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def index
-    @items = ad_type.all
+    if params[:type]
+      @items = ad_type.all
+    else
+      @items = Item.all
+    end
   end
 
   def show
