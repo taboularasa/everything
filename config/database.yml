@@ -1,25 +1,25 @@
 development:
   adapter: postgresql
-  database: everything_dev
+  database: Figaro.env.database
   pool: 5
   timeout: 5000
   host: localhost
-  username: gameadmin
-  password: gameadmin
+  username: Figaro.env.username
+  password: Figaro.env.password
 
 test:
   adapter: postgresql
-  database: everything_test
+  database: ENV["DATABASE"]
   pool: 5
   timeout: 5000
   host: localhost
-  username: gameadmin
-  password: gameadmin
+  username: ENV["USERNAME"]
+  password: ENV["PASSWORD"]
 
 production:
   adapter: postgresql
-  database: everything_production
+  database: ENV["DATABASE"]
   pool: 5
   timeout: 5000
-  username: gameadmin
-  password: gameadmin
+  username: ENV["USERNAME"]
+  password: ENV["PASSWORD"]

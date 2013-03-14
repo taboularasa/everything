@@ -9,6 +9,7 @@ gem 'closure_tree', '3.7.2'
 gem 'bookland', '~> 2.0.0'
 gem 'isbn_validation', '1.1.0'
 gem 'devise', '2.2.3'
+gem 'figaro', '0.6.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
