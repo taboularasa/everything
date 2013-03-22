@@ -10,6 +10,7 @@ gem 'bookland', '~> 2.0.0'
 gem 'isbn_validation', '1.1.0'
 gem 'devise', '2.2.3'
 gem 'figaro', '0.6.3'
+gem 'google_drive', '0.3.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
